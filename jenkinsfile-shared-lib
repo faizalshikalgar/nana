@@ -1,7 +1,7 @@
 #!/usr/bin/env groovy
 
 library indentifier: 'jenkins-lib@master', retriever: modernSCM(
-    [$class: 'GitSCMSource,
+    [$class: 'GitSCMSource',
     remote: 'https://github.com/faizalshikalgar/jenkins-lib.git']
 )
 def  gv
