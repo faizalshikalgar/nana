@@ -1,0 +1,36 @@
+#!/usr/bin/env groovy
+
+@Library ('jenkins-lib')
+def  gv
+
+pipeline {
+    agent any
+    tools {
+        maven "maven"
+    }
+    stages { 
+        stage('build') {
+            steps {
+                script {
+                    echo "Building the application..."
+                    buildJar()
+                }
+            }
+        }
+        stage('test') {
+            steps {
+                script {
+                    echo "Testing the application..."
+                    buildApp()
+                }
+            }
+        }
+        stage('deploy') {
+            steps {
+                script {
+                    echo "Deploying the application..."
+                }
+            }
+        }
+    }
+}
