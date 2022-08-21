@@ -1,12 +1,21 @@
 #!/usr/bin/env groovy
+def  gv
 
 pipeline {
     agent none
     stages {
+        stage('init') {
+            steps {
+                script {
+                    gv = load "script.groovy"
+                }
+            }
+        }
         stage('build') {
             steps {
                 script {
                     echo "Building the application..."
+                    gv.buildJar()
                 }
             }
         }
@@ -14,6 +23,7 @@ pipeline {
             steps {
                 script {
                     echo "Testing the application..."
+                    gv.buildImage()
                 }
             }
         }
