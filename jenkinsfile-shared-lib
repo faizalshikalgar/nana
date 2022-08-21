@@ -17,11 +17,11 @@ pipeline {
                 }
             }
         }
-        stage('test') {
+        stage('dockerImage') {
             steps {
                 script {
-                    echo "Testing the application..."
-                    buildApp()
+                    echo "building docker image..."
+                    buildDockerImage()
                 }
             }
         }
