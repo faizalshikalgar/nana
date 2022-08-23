@@ -22,7 +22,7 @@ pipeline {
             steps {
                 script {
                     echo "building docker image..."
-                    buildDockerImage()
+                    buildDockerImage 'faizalshikalgar/demo-app:jma-3.0'
                 }
             }
         }
