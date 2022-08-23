@@ -1,8 +1,8 @@
 #!/usr/bin/env groovy
 
-library indentifier: 'jenkins-lib@master', retriever: modernSCM(
-    [$class: 'GitSCMSource',
-    remote: 'https://github.com/faizalshikalgar/jenkins-lib.git']
+@Library('first-shared-lib') _
+jenkinsLambdaTest 'https://github.com/faizalshikalgar/jenkins-lib.git'
+
 )
 def  gv
 
