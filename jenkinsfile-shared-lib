@@ -1,9 +1,7 @@
 #!/usr/bin/env groovy
 
-@Library('first-shared-lib') _
-jenkinsLambdaTest 'https://github.com/faizalshikalgar/jenkins-lib.git'
+@Library('jenkins-shared-lib')
 
-)
 def  gv
 
 pipeline {
